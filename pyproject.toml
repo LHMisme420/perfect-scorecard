@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "perfect-scorecard"
+version = "0.1.0"
+description = "The only code quality tool that is always perfect (1.0)"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.1",
+    "astpretty>=3.0",   # nice to have for debugging AST, optional
+]
+
+[project.scripts]
+perfect-scorecard = "perfect_scorecard.cli:main"
+
