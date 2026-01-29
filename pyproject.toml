@@ -1,18 +1,19 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "perfect-scorecard"
-version = "0.1.0"
-description = "The only code quality tool that is always perfect (1.0)"
+name = "vata"  # ← change to "pyqual" or "code-soul" when ready
+version = "0.2.0"
+description = "Python code quality checker with style analysis and optional fun humanization"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
-    "click>=8.1",
-    "astpretty>=3.0",   # nice to have for debugging AST, optional
+    "radon>=5.1",
+    # optional: "ruff>=0.5"  # add if you want Ruff as a hard dependency
 ]
 
 [project.scripts]
-perfect-scorecard = "perfect_scorecard.cli:main"
+vata = "vata.cli:main"
+# optional alternative name
+# pyqual = "vata.cli:main"
 
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
